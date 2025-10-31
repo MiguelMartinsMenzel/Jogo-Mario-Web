@@ -25,6 +25,36 @@ body {
   color: #1b5e20;
 }
 
+.restart-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.game-board {
+  position: relative;
+}
+
+
+.restart-btn:hover {
+  background-color: #43a047;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+
+
 .game-board {
   position: relative;
   width: 80%;
@@ -43,7 +73,7 @@ body {
   right: 0;
   bottom: -6px;
   height: 40px;
-  background: repeating-linear-gradient(90deg, #4caf50 0 20px, #43a047 20px 40px);
+  background:#4caf50;
   z-index: 1;
 }
 
@@ -51,19 +81,21 @@ body {
   position: absolute;
   bottom: 0;
   left: 80px;
-  width: 80px;
+  width: 130px;
   z-index: 5;
   user-select: none;
   transition: width 0.1s;
 }
 
 .jump {
-  animation: jumpAnim 500ms cubic-bezier(.22,.88,.45,1);
+  animation: jumpAnim 1000ms cubic-bezier(.22,.88,.45,1);
 }
 
 @keyframes jumpAnim {
   0% { bottom: 0; }
-  50% { bottom: 180px; }
+  40% { bottom: 200px; }
+  50% { bottom: 200px; }
+  60% { bottom: 180px; }
   100% { bottom: 0; }
 }
 
@@ -112,7 +144,7 @@ body {
 
 @media (max-width: 600px) {
   .game-board { height: 350px; }
-  .mario { width: 60px; left: 50px; }
+  .mario { width: 100px; left: 50px; }
   .pipe { width: 70px; }
   .cloud { width: 80px; }
 }
